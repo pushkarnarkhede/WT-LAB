@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Intermediate</title>
+
+	<style type="text/css">
+		.btn-styled {
+		    font-size: 14px;
+		    margin: 8px;
+		    padding: 10px;
+		    background-color: gray;
+		    color: white;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		function generateButton(){
+			var button = document.createElement('button');
+			button.type = 'button';
+			button.innerHTML = 'Generated Button';
+			button.className = 'btn-styled';		
+			var container = document.getElementById('container');
+    		container.appendChild(button);
+    		
+		}
+
+	
+	</script>
+</head>
+<body>
+
+Click on the button to add new button : <input type="button" name="generate_Button" value="Generate Button" onclick="generateButton()"><br>
+ <div id="container"></div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		table,th,td{
+			font-size: 20px;
+			border: 1px solid black;
+		}
+	</style>
+	<script type="text/javascript">
+		// function addRow2(){
+		// 	var tableRef = document.getElementById('table');
+		// 	//alert(tableRef);
+		// 	var newRow = tableRef.insertRow(-1);
+		// 	var cell1 = newRow.insertCell(0);
+		// 	var cell2 = newRow.insertCell(1);
+		// 	var cell3 = newRow.insertCell(2);
+
+		// 	cell1.innerHTML = "aa";
+		// 	cell2.innerHTML = "bb";
+		// 	cell3.innerHTML = "cc";
+
+		// }
+
+		function addRow(){
+			var tableRef = document.getElementById('table');
+
+			var tableRow = document.createElement('tr');
+
+			var tableData1 = document.createElement('td');
+			var tableData2 = document.createElement('td');
+			var tableData3 = document.createElement('td');
+
+			var tableData1Text = document.createTextNode('aa');
+			var tableData2Text = document.createTextNode('bb');
+			var tableData3Text = document.createTextNode('cc');
+
+			tableRow.appendChild(tableData1);
+			tableRow.appendChild(tableData2);
+			tableRow.appendChild(tableData3);
+
+			tableData1.appendChild(tableData1Text);
+			tableData2.appendChild(tableData2Text);
+			tableData3.appendChild(tableData3Text);
+
+
+			tableRef.appendChild(tableRow);
+
+		}
+
+
+		function getRadioValue(){
+
+			var showData = document.getElementById('showValue');
+			var data = document.querySelector('input[type=radio]:checked');
+			showData.innerHTML = data.value;
+		}
+	</script>
+</head>
+<body>
+	<table id="table">
+		<th>a</th>
+		<th>b</th>
+		<th>c</th>
+			<tr>
+				<td>aa</td>
+				<td>bb</td>
+				<td>cc</td>
+			</tr>
+		
+			<tr>
+				<td>aa</td>
+				<td>bb</td>
+				<td>cc</td>
+			</tr>
+		
+			<tr>
+				<td>aa</td>
+				<td>bb</td>
+				<td>cc</td>
+			</tr>
+	</table>
+	<input type="button" name="addrow" value="Add Row" onclick="addRow()"><br><br>
+
+
+	<form>
+		<input type="radio" name="gender" value="Male"> : Male <br>
+		<input type="radio" name="gender" value="Female"> : Female <br>
+		<input type="button" name="getval" value="Get Value" onclick="getRadioValue()">
+		<p id="showValue"></p>
+
+	</form>
+
+</body>
+</html>

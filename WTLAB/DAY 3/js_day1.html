@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS Demo</title>
+	<script type="text/javascript">
+		function clickme_fun(){
+			//alert('HELLO JS');
+			//confirm('are you sure');
+
+			//var val = prompt('Enter more values :');
+			//alert(val);
+
+			parRef = document.getElementById("temp");
+			//alert(parRef);
+			//var parText = parRef.innerHTML;
+			//alert(parText);
+			parRef.innerHTML += " this is dynamic" 
+
+		} 
+
+		function getText(){
+			var text = document.getElementById("ipText").value;
+
+			var pRef = document.getElementById('showOP');
+			pRef.innerHTML += "Welcome "+ text + " Welcome to the world of JS";
+
+		}
+
+
+
+		function arithmaticOP(){
+			var ip1 = document.getElementById('ip1').value;
+			var ip2 = document.getElementById('ip2').value;
+			var a = parseInt(ip1);
+			var b = parseInt(ip2);
+
+			var add = a + b;
+			var sub = a - b;
+			var mul = a * b;
+			var div = a / b;
+
+			var addRef = document.getElementById("opADD");
+			addRef.innerHTML += "The addition is "+ add + "<br>"; 
+			var subRef = document.getElementById("opSUB");
+			addRef.innerHTML += "The Subtraction is "+ sub + "<br>";
+			var mulRef = document.getElementById("opMUL");
+			addRef.innerHTML += "The Multuplication is "+ mul + "<br>";
+			var divRef = document.getElementById("opDIV");
+			addRef.innerHTML += "The Division is "+ div + "<br>";
+
+		}
+
+
+function nameIntro() {
+			var fName = document.getElementById("fname").value;
+			var lName = document.getElementById("lname").value;
+
+			var paraRef = document.getElementById('showName');
+			paraRef.innerHTML += "Your Full Name is : "+ fName + lName;
+
+		}
+
+	
+
+		
+	</script>
+
+</head>
+<body>
+	<div id="temp"> This is temporary </div>
+	<input type="button" name="clickme" value="click" onclick="clickme_fun()">
+<br><br>
+	Enter Name : <input type="text" name="ip" id="ipText">
+	<input type="button" name="btn" value="click" onclick="getText()">
+<p id="showOP"></p>
+
+<br><br>
+
+<div style="border: 2px solid black; padding: 10px; margin: 10px;">
+	<h1 style="text-align: center;"> ASSG TRIAL</h1>
+
+	<form>
+		Enter Num 1 : <input type="number" name="" id="ip1">
+		Enter Num 2 : <input type="number" name="" id="ip2">
+		<input type="button" name="bt" value="click" onclick="arithmaticOP()"><br>
+		<p id="opADD"> </p>	<br>
+		<p id="opSUB"> </p>	<br>
+		<p id="opMUL"> </p>	<br>
+		<p id="opDIV"> </p>	
+
+		First Name : <input type="text" name="" id="fname">
+		Last Name : <input type="text" name="" id="lname">
+		<input type="button" name="bt2" value="click" onclick="nameIntro()"><br>
+		<p id="showName"> </p>	<br>
+
+	</form>
+
+
+
+</div>
+
+</body>
+</html>

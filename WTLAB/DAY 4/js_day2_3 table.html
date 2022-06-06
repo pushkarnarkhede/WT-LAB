@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Table usning javascript</title>
+
+	<script type="text/javascript">
+		function printTable() {
+			var num = document.getElementById('num1').value;
+			var result = 0
+			for (var i = 1; i <= 10; i++) {
+				result = i*num;	
+				//document.write(num+ "*" + i + " = "+ result+"<br>");
+				var parRef = document.getElementById("op");
+				parRef.innerHTML += num + " * " + i + " = "+ result + "<br>";
+			}
+		}
+
+		function factorial(){
+			var num = document.getElementById('num1').value;
+			var fact = 1;
+
+			for(var i=num ; i>1; i--){
+				fact *= i;
+			}
+			var parRefFact = document.getElementById("opFact");
+			parRefFact.innerHTML += "Factorial of  " + num + " is " + fact +"<br>";
+		}
+
+		function primeNumber(){
+			var num = document.getElementById('num1').value;
+			var prime = true;
+			if(num ==1){
+				var parRefFact = document.getElementById("opPrime");
+				parRefFact.innerHTML += num + " is neighter prime not composite number"+"<br>";
+
+			}else if(num >1){
+			for(var i = 2; i<num; i++){
+				if(num % i == 0){
+					prime = false;
+					break;
+				}
+			}
+			
+			if(prime){
+				var parRefFact = document.getElementById("opPrime");
+			parRefFact.innerHTML += num + " is prime number"+"<br>";
+
+			}else{
+				var parRefFact = document.getElementById("opPrime");
+			parRefFact.innerHTML += num + " is not prime number"+"<br>";
+
+			}
+		}
+		}
+
+
+		function sizeChange(){
+			var parRefSizeChange = document.getElementById("sizeChange");
+			parRefSizeChange.style.fontSize = "30px";
+
+		}
+
+
+		function changeColor(){
+			document.bgColor = "red";
+		}
+
+
+function changeColorOnDropDown(){
+	var selectColorRef = document.getElementById("selectColor").value;
+		document.bgColor = selectColorRef;
+
+}
+
+function changeTextBgColorOnDropDown(){
+	var paraRefColor = document.getElementById("textColorBgChange");
+	var selectColorTextRef = document.getElementById("selectColorText").value;
+	var selectColorBgRef = document.getElementById("selectColorBg").value;
+	//alert(paraRefColor);
+	//alert(selectColorTextRef);
+	//alert(selectColorBgRef);
+
+	if(selectColorBgRef == selectColorTextRef){
+		paraRefColor.style.color = "black";
+		paraRefColor.style.backgroundColor = "white";
+
+
+	}else{
+
+	paraRefColor.style.color = selectColorTextRef;
+	paraRefColor.style.backgroundColor = selectColorBgRef;
+}	
+
+}
+
+	</script>
+</head>
+<body>
+<!-- Number : <input type="number" name="num" id="num1">
+<input type="button" name="submit" value= "Table"  onclick="printTable()">
+<input type="button" name="submit" value= "factorial"  onclick="factorial()">
+<input type="button" name="submit" value= "prime"  onclick="primeNumber()">
+
+<p id="op"></p>
+<p id="opFact"></p>
+<p id="opPrime"></p>
+
+<input type="button" name="submit" value= "Change size to 30px"  onclick="sizeChange()"> -->
+<!-- <input type="button" name="submit" value= "Change background color to red"  onclick="changeColor()"><br> -->
+<!-- <p id="sizeChange"> Size Size </p> -->
+
+<!-- <select id="selectColor">
+	<option value="red">Red</option>
+	<option value="blue">Blue</option>
+	<option value="green">Green</option>
+	<option value="yellow">Yellow</option>
+
+</select>
+<input type="button" name="submit" value= "Change color"  onclick="changeColorOnDropDown()"> -->
+
+
+
+<p id="textColorBgChange" style="font-size: 30px;">Color Changing</p>
+
+<select id="selectColorText">
+	<option value="red">Red</option>
+	<option value="blue">Blue</option>
+	<option value="green">Green</option>
+	<option value="yellow">Yellow</option>
+</select>
+
+<select id="selectColorBg">
+	<option value="red">Red</option>
+	<option value="blue">Blue</option>
+	<option value="green">Green</option>
+	<option value="yellow">Yellow</option>
+</select>
+
+<input type="button" name="submit" value= "Change color"  onclick="changeTextBgColorOnDropDown()">
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Array</title>
+
+	<script type="text/javascript">
+
+		// function isColorPresent(){
+		// 	var colorArray = ['red','blue','green'];
+		// 	//alert(colorArray);
+		// 	var ipVal = document.querySelector('input[type=text]').value;
+		// 	//alert(ipVal);
+		// 	//alert(colorArray.length);
+		// 	if(colorArray.includes(ipVal)){
+		// 		alert('present');
+		// 	}else{
+		// 		alert('Not present');
+		// 		colorArray.push(ipVal);
+		// 		alert(colorArray);
+		// 	}
+
+		// }
+		var cnt=0;
+		function changeImage(){
+			var imageArray = ["covid 19 page.png","home page.png", "login pg.png"];
+			var image = document.getElementById('imageId');
+			
+
+			if(cnt>=0 && cnt!=imageArray.length-1){
+				cnt++;
+			}else if(cnt==imageArray.length-1){
+			 	cnt = 0;			 
+			}
+			
+			//alert(cnt);
+			
+			image.src = imageArray[cnt];
+			}            
+
+		
+
+	</script>
+</head>
+<body>
+	<!-- Enter color  : <input type="text" name="color">
+	<input type="button" name="present" value="Click here" onclick="isColorPresent()"> -->
+	<img src="covid 19 page.png" height=500px width=500px id="imageId">
+	<input type="button" name="imageChange" value="Change Image" onclick="changeImage()">
+
+
+
+</body>
+</html>

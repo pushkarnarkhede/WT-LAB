@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DOM Extra Work</title>
+
+	<script type="text/javascript">
+		// function onRadioColor(){
+		// 	var data = document.querySelector('input[type=radio]:checked');
+		// 	document.bgColor = data.value;
+		// 	//alert(data.value);
+		// }
+
+		// function onRadioColorToDiv(){
+		// 	var data = document.querySelector('input[type=radio]:checked');
+		// 	var divRef = document.getElementById("div1");
+		// 	divRef.style.backgroundColor = data.value;
+		// 	//alert(data.value);
+		// 	//alert(divRef);
+
+		// }
+
+
+		function onRadioColorToPara(){
+			var paraRef = document.querySelectorAll('p');
+			for (var i = paraRef.length -1; i > paraRef.length -4 ; i--) {
+  				paraRef[i].style.backgroundColor = "yellow";
+  			}
+  			//paraRef[paraRef.length -1].style.backgroundColor = "yellow"; //for last eleemnt only
+			//alert(paraRef);
+
+		}
+
+
+	</script>
+	<!-- <style type="text/css">
+		#div1{
+			height: 500px;
+			width: 500px;
+			border: 2px solid black;
+			margin-top: 20px;
+			padding: 5px;
+		}
+	</style> -->
+</head>
+<body>
+	<!-- <p>DOM</p>
+	<input type="radio" name="radioRed" value="red"> Red
+	<input type="radio" name="radioRed" value="yellow"> Yellow
+	<input type="radio" name="radioRed" value="green"> Green 
+	<input type="button" name="colorOnRadio" value="Change Color" onclick="onRadioColor()"> <br>
+ -->
+	<!-- <div id="div1">
+	<input type="radio" name="radioRed" value="red" onchange="onRadioColorToDiv()"> Red
+	<input type="radio" name="radioRed" value="yellow" onchange="onRadioColorToDiv()"> Yellow
+	<input type="radio" name="radioRed" value="green" onchange="onRadioColorToDiv()" > Green 
+	</div> -->
+
+	<p > adsfasfafs </p>
+	<p > adhasfhahbf </p>
+	<p > ajdasuafs </p>
+	<p > ajdasuafs </p><p > ajdasuafs </p><p > ajdasuafs </p><p > ajdasuafs </p>
+	<p > ajdasuafs </p><p > ajdasuafs </p><p > ajdasuafs </p><p > ajdasuafs </p>
+	<p > asbkasbfkbqs f </p>
+	<p > abkasufkasn s</p>
+	<input type="button" name="colorOnRadioToPara" value="Change Color" onclick="onRadioColorToPara()">
+
+
+</body>
+</html>

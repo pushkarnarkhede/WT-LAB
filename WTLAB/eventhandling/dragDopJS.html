@@ -1,0 +1,61 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1, #div2 {
+  width: 350px;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  float: left;
+}
+</style>
+<script>
+function allowDrop(evnt) {
+  evnt.preventDefault();
+}
+
+function drag(evnt) {
+  evnt.dataTransfer.setData("text", evnt.target.id);
+}
+
+function drop(evnt) {
+  evnt.preventDefault();
+  var data = evnt.dataTransfer.getData("text");
+  
+  evnt.target.appendChild(document.getElementById(data));
+
+  alert(document.getElementById(data).id);
+
+}
+
+function dropId(evnt) {
+  evnt.preventDefault();
+  var data = evnt.dataTransfer.getData("text");
+  alert(document.getElementById(data).id);
+  
+  //evnt.target.appendChild();
+
+  // alert(document.getElementById(data).id);
+
+}
+
+</script>
+</head>
+<body>
+<p id="drag1" draggable="true" ondragstart="drag(event)"> hehehhe </p> <!-- draggable true keley so that text allowed rahil drag sathi  -->
+<p id="drag2" draggable="true" ondragstart="drag(event)"> hehe </p>
+<p id="drag3" draggable="true" ondragstart="drag(event)"> he </p>
+
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="dropId(event)" ondragover="allowDrop(event)"></div>
+
+<br>
+
+
+
+</body>
+</html>
+
